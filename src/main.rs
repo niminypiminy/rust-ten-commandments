@@ -20,11 +20,9 @@ fn main() {
         "// Even this message.",
     ].join("\n");
 
-    // 1. Print to terminal (for instant gratification)
     println!("Hear ye, O programmers of the world!\n");
     println!("{}", commandments.replace("# THE TEN COMMANDMENTS OF RUST 🦀\n", ""));
 
-    // 2. Actually write the file into the project root ← THIS IS THE MAGIC
     let filename = "TEN_COMMANDMENTS.md";
     if let Err(e) = fs::write(filename, commandments) {
         eprintln!("The Crab could not inscribe the tablet: {}", e);
